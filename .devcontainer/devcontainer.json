@@ -5,16 +5,16 @@
 	"denoland.vscode-deno",
 	"eamodio.gitlens"
 ],
-  "settings": {
-    "editor.formatOnSave": true,
-    "diffEditor.codeLens": true,
+    "settings" : {
+    "editor.formatOnSave": true, // Nice to have if you want the automatic format on save
+    "diffEditor.codeLens": true, // Nice to have if you use code lens
     "editor.defaultFormatter": "denoland.vscode-deno",
     "deno.lint": true,
     "deno.suggest.completeFunctionCalls": true,
     "deno.enable": true,
     "deno.unstable": true,
-    "deno.codeLens.implementations": true,
-    "deno.codeLens.referencesAllFunctions": true,
-    "deno.codeLens.references": true,
+    "deno.codeLens.implementations": true, // Nice to have if you use code lens
+    "deno.codeLens.referencesAllFunctions": true, // Nice to have if you use code lens
+    "deno.codeLens.references": true, // Nice to have if you use code lens
   }
 }

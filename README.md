@@ -24,13 +24,13 @@ keep this documentation updated as I progress.
 In order to get the base structure in a new project, in VS Code do the following
 :
 
-1. CTRL + SHIFT + P
+>1. CTRL + SHIFT + P
 
-2. Select "Remote-Container: Add Development Container Configuration Files..."
+>2. Select "Remote-Container: Add Development Container Configuration Files..."
 
-3. Select "All Configuration"
+>3. Select "All Configuration"
 
-4. Search and select "Deno"
+>4. Search and select "Deno"
 
 At this point, you could use this image and configuration (and maybe you
 should.. ?). However, I wanted to experiment with another image than the one
@@ -60,7 +60,7 @@ https://deno.land/manual@v1.9.2/getting_started/debugging_your_code
 Beware : In order to see the logs in the DEBUG CONSOLE window, we need to add
 this line :
 
-> "outputCapture": "std"
+```"outputCapture": "std"```
 
 ### TODO
 
@@ -74,4 +74,26 @@ experiment :
 
 # Deno
 
-Experimentation in progress... !
+## Dev Environment
+Since Deno comes with his own Lint and Format, some setup needs to be done inside VS Code (or dev containers) to be able to get the best of it. 
+
+1. Make sure that the Deno Plugin is installed : 
+https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno
+
+2. To enable the linter and the formater, you will have to configure your settings inside VS Code. However, if you are using a dev container, you will need to add, manualy, at least those lines in the devconainer.json file :
+```
+   "settings" : {
+    "editor.formatOnSave": true, // Nice to have if you want the automatic format on save
+    "diffEditor.codeLens": true, // Nice to have if you use code lens
+    "editor.defaultFormatter": "denoland.vscode-deno",
+    "deno.lint": true,
+    "deno.suggest.completeFunctionCalls": true,
+    "deno.enable": true,
+    "deno.unstable": true,
+    "deno.codeLens.implementations": true, // Nice to have if you use code lens
+    "deno.codeLens.referencesAllFunctions": true, // Nice to have if you use code lens
+    "deno.codeLens.references": true, // Nice to have if you use code lens
+  }
+```
+
+3. Don't forget to rebuild the container to apply changes made in the .devcontainer folder.
