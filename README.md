@@ -60,7 +60,9 @@ https://deno.land/manual@v1.9.2/getting_started/debugging_your_code
 Beware : In order to see the logs in the DEBUG CONSOLE window, we need to add
 this line :
 
-```"outputCapture": "std"```
+```json
+"outputCapture": "std"
+```
 
 ### TODO
 
@@ -81,7 +83,7 @@ Since Deno comes with his own Lint and Format, some setup needs to be done insid
 https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno
 
 2. To enable the linter and the formater, you will have to configure your settings inside VS Code. However, if you are using a dev container, you will need to add, manualy, at least those lines in the devconainer.json file :
-```
+```json
    "settings" : {
     "editor.formatOnSave": true, // Nice to have if you want the automatic format on save
     "diffEditor.codeLens": true, // Nice to have if you use code lens
