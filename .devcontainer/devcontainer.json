@@ -1,24 +1,20 @@
 {
   "name": "Deno",
   "dockerFile": "Dockerfile",
-
   "extensions": [
-    "denoland.vscode-deno",
-    "emeraldwalk.runonsave"
-  ],
+	"denoland.vscode-deno",
+	"eamodio.gitlens"
+],
   "settings": {
-    "emeraldwalk.runonsave": {
-      "autoClearConsole": true,
-      "commands": [
-        {
-          "match": ".*",
-          "cmd": "deno fmt ${file}"
-        },
-        {
-          "match": ".*",
-          "cmd": "deno lint --unstable ${file}"
-        }
-      ]
-    }
+    "editor.formatOnSave": true,
+    "diffEditor.codeLens": true,
+    "editor.defaultFormatter": "denoland.vscode-deno",
+    "deno.lint": true,
+    "deno.suggest.completeFunctionCalls": true,
+    "deno.enable": true,
+    "deno.unstable": true,
+    "deno.codeLens.implementations": true,
+    "deno.codeLens.referencesAllFunctions": true,
+    "deno.codeLens.references": true,
   }
 }
