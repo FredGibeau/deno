@@ -2,5 +2,23 @@
   "name": "Deno",
   "dockerFile": "Dockerfile",
 
-  "extensions": ["denoland.vscode-deno"],
+  "extensions": [
+    "denoland.vscode-deno",
+    "emeraldwalk.runonsave"
+  ],
+  "settings": {
+    "emeraldwalk.runonsave": {
+      "autoClearConsole": true,
+      "commands": [
+        {
+          "match": ".*",
+          "cmd": "deno fmt ${file}"
+        },
+        {
+          "match": ".*",
+          "cmd": "deno lint --unstable ${file}"
+        }
+      ]
+    }
+  }
 }
