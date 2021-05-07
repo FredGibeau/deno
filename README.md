@@ -99,3 +99,23 @@ https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno
 ```
 
 3. Don't forget to rebuild the container to apply changes made in the .devcontainer folder.
+
+## Oak
+Oak is the Koa alternative for Deno. It's a middleware framework for Deno's http server. For more information on Oak, visit https://github.com/oakserver/oak
+
+### Server.ts
+Main entry of the server. This file is for the creation and the configuration of the server.
+
+### Router.ts
+Routes configurations for the server
+
+### Models (.ts)
+The different types (models) definitions returned by the API and used by the server. 
+TODO : Eventualy, we will need to use DTOS in between the future database (data layer)
+and the server.
+
+### Controlers (.ts)
+The different actions that the API will have to serve.
+
+### Fun alternative to Oak that deserves to be considered
+ - Deno-Express (based on Node Express) : https://github.com/NMathar/deno-express
