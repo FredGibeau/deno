@@ -1,11 +1,10 @@
-import { Application } from "https://deno.land/x/oak/mod.ts";
+import { Application } from "https://deno.land/x/oak@v7.4.0/mod.ts";
 import router from "./router.ts";
 
 const app = new Application();
 const hostname = "localhost";
 const port = 8080;
 
-// Here, we are telling our application to use the router
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.listen({ hostname, port });

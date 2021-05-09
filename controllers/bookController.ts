@@ -1,4 +1,4 @@
-import { RouterContext } from "https://deno.land/x/oak/mod.ts";
+import { RouterContext } from "https://deno.land/x/oak@v7.4.0/mod.ts";
 import Book from "../models/book.ts";
 
 const books: Array<Book> = [{

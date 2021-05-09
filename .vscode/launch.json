@@ -17,7 +17,14 @@
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "deno",
-      "runtimeArgs": ["run", "--allow-net", "--unstable", "--inspect", "-A", "server.ts"],
+      "runtimeArgs": [
+        "run",
+        "--allow-net",
+        "--unstable",
+        "--inspect",
+        "-A",
+        "server.ts"
+      ],
       "attachSimplePort": 9229,
       "outputCapture": "std"
     }
