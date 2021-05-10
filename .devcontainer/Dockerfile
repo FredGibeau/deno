@@ -1,5 +1,4 @@
-FROM hayd/ubuntu-deno
+FROM hayd/ubuntu-deno:1.9.2
 
 RUN apt update
 RUN apt install -y git
-RUN curl -fsSL https://deno.land/x/install/install.sh | sh

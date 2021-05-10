@@ -1,17 +1,23 @@
 import { RouterContext } from "https://deno.land/x/oak@v7.4.0/mod.ts";
 import Book from "../models/book.ts";
+import MongoClient from "../mongoClient.ts";
 
-const books: Array<Book> = [{
-  id: "1",
-  title: "The Road to React",
-}, {
-  id: "2",
-  title: "You Don't Know JS: Scope & Closures",
-}, {
-  id: "3",
-  title: "Mastering Bitcoin",
-}];
+const bookCollection = MongoClient.collection("books");
 
-export const getBooks = (routerContext: RouterContext) => {
-  routerContext.response.body = books;
+export const getBooks = async (ctx: RouterContext) => {
+  const rooms = await bookCollection.find();
+  ctx.response.body = rooms;
+};
+
+export const createBooks = async (ctx: RouterContext) => {
+  const { title } = await ctx.request.body().value;
+
+  const book: Book = {
+    id: title,
+    title,
+  };
+
+  await bookCollection.insertOne(book);
+  ctx.response.status = 201;
+  ctx.response.body = book;
 };

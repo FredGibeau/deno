@@ -1,11 +1,14 @@
 {
   "name": "Deno",
-  "dockerFile": "Dockerfile",
+  "dockerComposeFile": "docker-compose.yml",
+  "workspaceFolder": "/workspace",
+  "service": "app",
   "extensions": [
-	"denoland.vscode-deno",
-	"eamodio.gitlens"
-],
-    "settings" : {
+    "denoland.vscode-deno",
+    "eamodio.gitlens",
+    "ms-azuretools.vscode-docker"
+  ],
+  "settings": {
     "editor.formatOnSave": true, // Nice to have if you want the automatic format on save
     "diffEditor.codeLens": true, // Nice to have if you use code lens
     "editor.defaultFormatter": "denoland.vscode-deno",
@@ -15,6 +18,6 @@
     "deno.unstable": true,
     "deno.codeLens.implementations": true, // Nice to have if you use code lens
     "deno.codeLens.referencesAllFunctions": true, // Nice to have if you use code lens
-    "deno.codeLens.references": true, // Nice to have if you use code lens
+    "deno.codeLens.references": true // Nice to have if you use code lens
   }
 }

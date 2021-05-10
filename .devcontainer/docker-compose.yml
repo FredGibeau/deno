@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    network_mode: service:db
+  db:
+    image: mongo:4.4.5
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: denoOakApi
+      MONGODB_USERNAME: root
+      MONGODB_PASSWORD: password
+      MONGODB_DATABASE: denoOakApi
+    volumes: 
+      - ./data/db:/var/micro-data/mongodb/data/db

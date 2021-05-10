@@ -1,10 +1,8 @@
 # Deno Sandbox
-
 This project was purely made as a Deno's sandbox where I will be experimenting
 and docucumenting my learnings of Deno.
 
 # Dev Environment (Dev Container)
-
 While learning, I thought it would be great to also experiment with Dev
 Containers & Visual Studio. As of right now, I only have a barebone of what a
 Deno's Dev Container should have in order to run, log and debug. I will update
@@ -14,13 +12,11 @@ keep this documentation updated as I progress.
 ## Dev Environment references
 
 ### Requirements :
-
 - Docker Desktop
 - Visual Studio Code
 - Docker Extension for VS Code
 
 ### Getting Started :
-
 In order to get the base structure in a new project, in VS Code do the following
 :
 
@@ -38,20 +34,22 @@ automaticaly provided with Microsoft. If you chose to use the default, you can
 skip the Dockerfile and the devcontainer.json section.
 
 ### Dockerfile :
-
 I'm using an already built Ubuntu's Docker image that has Deno preinstalled. I
 tried to setup a docker image from scratch by my own (Alpine & Ubuntu) but I got
 repeatedly prompt errors saying that commands (Sudo, Apt...) weren't found.
 Since the goal of this learning wasn't specific to Linux/Docker, I decided to
-use a prebuilt image that was well known and up to date.
+use a prebuilt image that was well known and up to date. Here is the reference to the used image : 
+https://hub.docker.com/r/hayd/deno
+
+### docker-compose.yml
+I didn't need this file until I need a database. I'll update this section whenever a new need comes.
+For further reference of this file, please check the Mongo DB section.
 
 ### devcontainer.json :
-
 Simple VS Code config file that references the DockerFile and specifies the
 different required/recommended plugins & settings to use while developping.
 
 ### launch.json
-
 VS Code launch configuration file that specifies how to execute the program. NB
 : For reference see this link :
 
@@ -64,12 +62,23 @@ this line :
 "outputCapture": "std"
 ```
 
-### TODO
+### Installed Extensions
+While I tried to kept the extensions as minimal as possible while coding, I still find that some provided some great utilities for (almost) any kind of projects. Here is the list and explanation of all the extensions provided in the dev containter.
 
+#### Deno
+The Deno extensions that allows us to Lint, Format and Intellisense our code. To be removed if you use this as a reference for non Deno project.
+
+#### Docker
+Gives us Lint, Format and Intellisense for our Docker files. 
+
+#### GitLens
+Provides great utilities for everything related to Git : Commits, Changes, Histories... !
+
+### TODO
 Here is a list of things I need to verify, would like to do or would like to
 experiment :
 
-- Setup a User instead of using the Root.
+- Setup a User instead of using the Root for the dev container.
 - I WILL have to setup some ports forwarding eventually. I will do it when the
   time comes.
 - Setup the must have addons to develop with (Tests & other utilitaries)
@@ -102,11 +111,13 @@ https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno
 
 ## Oak
 Oak is the Koa alternative for Deno. It's a middleware framework for Deno's http server. For more information on Oak, visit https://github.com/oakserver/oak
+For this part, I followed along this tutorial : https://blog.logrocket.com/building-a-restful-api-in-deno-with-oak-and-mongodb/ while also applying some 
+folder structure that was taken from my past Dotnet Core experience (MVC).
 
-### Server.ts
+### server.ts
 Main entry of the server. This file is for the creation and the configuration of the server.
 
-### Router.ts
+### router.ts
 Routes configurations for the server
 
 ### Models (.ts)
@@ -119,3 +130,14 @@ The different actions that the API will have to serve.
 
 ### Fun alternative to Oak that deserves to be considered
  - Deno-Express (based on Node Express) : https://github.com/NMathar/deno-express
+
+## Mongo DB
+Mongo is supported with Deno and here is the module for it : https://deno.land/x/mongo.
+The configuration of Mongo to this project was a combined effort of this tutorial : https://blog.logrocket.com/building-a-restful-api-in-deno-with-oak-and-mongodb/
+And the documentation in the module web page, since the tutorial was a little behind the Mongo module version.
+
+### docker-compose.yml
+An update to Docker (dev container) was needed since we also needed a different server that would strictly run our Mongo instance. For a full documentation of the Mongo image, please refer to this page : https://hub.docker.com/_/mongo
+
+### mongoClient.ts
+This files provides connections and configurations regarding the Mongo Database.
