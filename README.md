@@ -4,7 +4,7 @@ and docucumenting my learnings of Deno.
 
 # Dev Environment (Dev Container)
 While learning, I thought it would be great to also experiment with Dev
-Containers & Visual Studio. As of right now, I only have a barebone of what a
+Containers & Visual Studio Code. As of right now, I only have a barebone of what a
 Deno's Dev Container should have in order to run, log and debug. I will update
 the Dev Container as I need more functionalities from it (Ports, Users, ...) and
 keep this documentation updated as I progress.

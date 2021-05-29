@@ -5,8 +5,8 @@ import MongoClient from "../mongoClient.ts";
 const bookCollection = MongoClient.collection("books");
 
 export const getBooks = async (ctx: RouterContext) => {
-  const rooms = await bookCollection.find();
-  ctx.response.body = rooms;
+  const books = await bookCollection.find().toArray();
+  ctx.response.body = books;
 };
 
 export const createBooks = async (ctx: RouterContext) => {
