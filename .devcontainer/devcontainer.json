@@ -4,10 +4,11 @@
   "workspaceFolder": "/workspace",
   "service": "app",
   "extensions": [
-    "denoland.vscode-deno",
-    "eamodio.gitlens",
-    "ms-azuretools.vscode-docker"
-  ],
+	"denoland.vscode-deno",
+	"eamodio.gitlens",
+	"ms-azuretools.vscode-docker",
+	"rangav.vscode-thunder-client"
+],
   "settings": {
     "editor.formatOnSave": true, // Nice to have if you want the automatic format on save
     "diffEditor.codeLens": true, // Nice to have if you use code lens

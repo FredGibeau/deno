@@ -6,6 +6,6 @@ await mongoClient.connect(
   "mongodb://root:password@mongo",
 );
 
-const mongoDb = mongoClient.database("denoOakApi");
+const mongoDb = mongoClient.database("QuesadillaManger");
 
 export default mongoDb;
